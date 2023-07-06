@@ -1,11 +1,21 @@
-<!DOCTYPE html>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<!DOCTYPE html>	
 <html>
 <head>
 <title>Registro de Empleado</title>
 <link rel="stylesheet"href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 </head>
+<%
+    session=request.getSession(false);
+    if(session.getAttribute("admin")==null)
+    {
+        response.sendRedirect("index.jsp");
+    }
+
+%> 
 <body>
-	<nav class="navbar navbar-expand-lg bg-body-tertiary" style="background-color: #e3f2fd;">
+<nav class="navbar navbar-expand-lg bg-body-tertiary" style="background-color: #e3f2fd;">
   <div class="container-fluid">
     <a class="navbar-brand" href="#">Menu</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
@@ -20,7 +30,13 @@
           <a class="nav-link active" href="crear_capacitacion.jsp">Crear Capacitacion</a>
         </li>
         <li class="nav-item">
+          <a class="nav-link" href="listar_capacitaciones.jsp">Listar Capacitaciones</a>
+        </li>
+        <li class="nav-item">
           <a class="nav-link" href="contacto.jsp">Contacto</a>
+        </li>
+          <li class="nav-item">
+          <a class="nav-link" href="cerrar_sesion.jsp">Cerrar Sesion</a>
         </li>
       </ul>
       <span class="navbar-text">
@@ -72,4 +88,5 @@
 	<script
 		src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
+<% out.print("Session id:" + session.getId()); %>
 </html>

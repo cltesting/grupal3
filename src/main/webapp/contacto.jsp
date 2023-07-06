@@ -7,6 +7,14 @@
 <title>Contacto</title>
 <link rel="stylesheet"href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 </head>
+<%
+    session=request.getSession(false);
+    if(session.getAttribute("admin")==null)
+    {
+        response.sendRedirect("index.jsp");
+    }
+
+%> 
 <body>
 <nav class="navbar navbar-expand-lg bg-body-tertiary" style="background-color: #e3f2fd;">
   <div class="container-fluid">
@@ -23,7 +31,13 @@
           <a class="nav-link" href="crear_capacitacion.jsp">Crear Capacitacion</a>
         </li>
         <li class="nav-item">
+          <a class="nav-link" href="listar_capacitaciones.jsp">Listar Capacitaciones</a>
+        </li>
+        <li class="nav-item">
           <a class="nav-link active" href="contacto.jsp">Contacto</a>
+        </li>
+          <li class="nav-item">
+          <a class="nav-link" href="cerrar_sesion.jsp">Cerrar Sesion</a>
         </li>
       </ul>
       <span class="navbar-text">
@@ -31,7 +45,7 @@
       </span>
     </div>
   </div>
-</nav>	
+</nav>
 	<div class="container col-lg-8 mt-4">
 		<h1>Contacto</h1>
 		<form action="resumen_mensaje.jsp" method="post">
@@ -64,4 +78,5 @@
 		integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
 		crossorigin="anonymous"></script>
 </body>
+<% out.print("Session id:" + session.getId()); %>
 </html>

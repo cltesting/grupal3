@@ -20,19 +20,19 @@
     <div class="collapse navbar-collapse" id="navbarText">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="usuario.jsp">Home</a>
+          <a class="nav-link" aria-current="page" href="usuario.jsp">Home</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="crear_capacitacion.jsp">Crear Capacitacion</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="listar_capacitaciones.jsp">Listar Capacitaciones</a>
+          <a class="nav-link active" href="listar_capacitaciones.jsp">Listar Capacitaciones</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="contacto.jsp">Contacto</a>
         </li>
           <li class="nav-item">
-          <a class="nav-link" href="index.jsp">Cerrar Sesion</a>
+          <a class="nav-link" href="cerrar_sesion.jsp">Cerrar Sesion</a>
         </li>
       </ul>
       <span class="navbar-text">
@@ -50,4 +50,5 @@
 
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
 </body>
+<% out.print("Session id:" + session.getId()); %>
 </html>
